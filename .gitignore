@@ -2,7 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+# Obisidan cashe
+.obsidian/
 # C extensions
 *.so
 
