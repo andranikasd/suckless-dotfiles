@@ -1,0 +1,5 @@
+- name: Apply prereq role to all hosts
+  hosts: all
+  
+  roles:
+    - prereq

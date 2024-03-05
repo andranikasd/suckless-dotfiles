@@ -1,0 +1,25 @@
+# Configuration files for ansible playbook 
+packages:
+  debian: ["vim", "curl", "wget", "python3", "python3-pip", "golang", "cargo", "vagrant", "virtualbox", "npm"]
+  darwin:
+    - python3
+    - wget
+    - git
+    - curl
+  arch:
+    - python3
+    - python3-pip
+    - wget
+    - git
+    - curl
+  alpine:
+    - python3
+    - py3-pip
+    - vim
+    - wget
+    - git
+    - curl
+
+tools:
+  - name: vscode
+    base_uri: "https://update.code.visualstudio.com/latest"

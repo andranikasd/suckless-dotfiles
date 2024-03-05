@@ -1,0 +1,25 @@
+# For handling different OS prerequisites
+
+- name: Detect Operating System
+  ansible.builtin.set_fact:
+    os_family_detected: "{{ ansible_os_family }}"
+
+- name: Detect architecture and set custom fact
+  ansible.builtin.set_fact:
+    download_arch: "{{ 'amd64' if ansible_architecture == 'x86_64' else 'arm64' if ansible_architecture == 'aarch64' else ansible_architecture }}"
+
+- name: Call prereq processing for Debian
+  include_tasks: debian/prereq-debian.yaml
+  when: os_family_detected == "Debian"
+
+- name: Call prereq processing for Arch
+  include_tasks: arch/prereq-arch.yaml
+  when: os_family_detected == "Archlinux"
+
+- name: Call prereq processing for MacOS
+  include_tasks: darwin/prereq-darwin.yaml
+  when: os_family_detected == "Darwin"
+
+- name: Call prereq processing for Alpine
+  include_tasks: apline/prereq-alpine.yaml
+  when: os_family_detected == "Alpine"  
