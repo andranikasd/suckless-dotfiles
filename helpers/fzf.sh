@@ -39,11 +39,14 @@
 frevs() {
     local selected_command
     selected_command=$(history | tac | fzf --tac --query="$READLINE_LINE" --reverse --preview="echo {}" --height=40%)
-    READLINE_LINE="${selected_command##* }"
-    READLINE_POINT=${#READLINE_LINE}
+    
+    if [ -n "$selected_command" ]; then
+        # Remove leading spaces and command number from history output
+        selected_command=$(echo "${selected_command}" | sed 's/^[ ]*[0-9]\{1,\}[ ]*//')
+        READLINE_LINE="$selected_command"
+        READLINE_POINT=${#READLINE_LINE}
+    fi
 }
-bind -x '"\C-r": "frevs"'
-
 #-------------------------------------------------------------------------------
 # Function: fco
 #

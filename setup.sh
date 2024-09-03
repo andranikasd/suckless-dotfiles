@@ -255,8 +255,8 @@ info "Soft link for .custom.bashrc created"
 # Copy and modify .bashrc with the current username
 cp .custom.bashrc ~/.custom.bashrc
 sed -i "s/USERNAME/${USER}/g" ~/.custom.bashrc
-echo "source ${HOME}/.custom.bashrc >> ${HOME}/.bashrc"
 
+echo "source ${HOME}/.custom.bashrc" >> ${HOME}/.bashrc
 info "Script execution completed successfully"
 
 #===============================================================================

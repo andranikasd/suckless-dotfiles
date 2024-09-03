@@ -57,12 +57,25 @@ if [ -f "$HOME/helpers/watch.sh" ]; then
     source "$HOME/helpers/watch.sh"
 fi
 
+# Custom things to add
+complete -o default -F __start_kubectl kd
+complete -o default -F __start_kubectl k
+
+# Enabling kubectl completion
+source <(kubectl completion bash)
+
+# Set case-insensitive completion
+bind "set completion-ignore-case on"
+
+# Bind fzf-command searcher to <Cntrl>-r
+bind -x '"\C-r": "frevs"'
+
 # --- Final Customizations ----------------------------------------------------
 # Add any final custom shell commands or environment setups here
 
 # Add custom welcome message, e.g., using figlet and lolcat
 if command -v figlet &> /dev/null && command -v lolcat &> /dev/null; then
-    figlet -f slant "Welcome, $USER!" | lolcat
+    echo -e "May the Force be With You and Father of Understanding Guide Us! \n" | lolcat
 fi
 
 #===============================================================================
