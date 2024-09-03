@@ -26,7 +26,7 @@ export HISTSIZE=1000
 export HISTFILESIZE=2000
 export HISTCONTROL=ignoredups
 export HISTIGNORE='clear:clr'
-
+export EDITOR=vim
 # Set PATH to include custom bin directories
 export PATH="/home/$USER/.krew/bin:/home/$USER/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/$USER/.linkerd2/bin:$PATH"
 

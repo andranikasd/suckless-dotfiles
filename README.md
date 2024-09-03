@@ -36,16 +36,16 @@ The `suckless-dotfiles` project is a collection of configuration files and helpe
 
 1. **Clone the Repository:**
 
-   \```
-   git clone https://github.com/andranikasd/suckless-dotfiles.git
-   cd suckless-dotfiles
-   \```
+    ```bash
+    git clone https://github.com/andranikasd/suckless-dotfiles.git
+    cd suckless-dotfiles
+    ```
 
 2. **Run the Setup Script:**
 
-   \```
+   ```bash
    ./setup.sh
-   \```
+   ```
 
    The setup script will:
    - Install essential packages like `vim`, `fzf`, `htop`, `kubectl`, and more.
@@ -53,14 +53,6 @@ The `suckless-dotfiles` project is a collection of configuration files and helpe
    - Create soft links for dotfiles and helper scripts in your home directory.
    - Customize your shell environment with aliases, environment variables, and prompt settings.
 
-3. **Source the Custom Bash Configuration:**
-
-   After running the setup script, ensure that your `.bashrc` sources the custom `.custom.bashrc` file:
-
-   \```
-   echo "source ~/.custom.bashrc" >> ~/.bashrc
-   source ~/.bashrc
-   \```
 
 ## Usage Guide
 
